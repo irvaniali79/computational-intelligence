@@ -16,7 +16,8 @@ for index in range(len(inputdata)):
 
     adaline = Adaline()
 
-    coefs = adaline.fit(x_train, y_train)
+    coefs, epoc = adaline.fit(x_train, y_train)
+    print(epoc)
     plotNodes(x_train, y_train)
     plotLine(coefs)
 

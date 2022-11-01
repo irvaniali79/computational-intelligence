@@ -32,5 +32,12 @@ def plotLine(coefficients):
     b3 = -1*coefficients[2]/coefficients[1]
     X = np.linspace(-1, 1)
     Y3 = m*X+b3
+    Y4 = m*X+b3-1
+    Y5 = m*X+b3+1
+
     plt.plot(X, Y3, '#008000')
+    plt.plot(X, Y4, '--' )
+
+    plt.plot(X, Y5, '--')
+
 
