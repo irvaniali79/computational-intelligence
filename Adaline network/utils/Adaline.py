@@ -1,9 +1,11 @@
+import math
+
 import numpy as np
 from math import inf
 
 
 class Adaline:
-    def __init__(self, epsilon=1, random_state=1, learning_rate=0.1):
+    def __init__(self, epsilon=1, random_state=1, learning_rate=0.5):
         self.random_state = random_state
         self.learning_rate = learning_rate
         self.coef = np.asarray([])
@@ -26,13 +28,14 @@ class Adaline:
         # add biase
         column = np.array([[[1]]*len(x)])
         x = np.append(x, column[0], axis=1)
-        self.coef = rgen.normal(loc=0.0, scale=0.01, size=_size)  # + 1 for biase
+        self.coef =np.round(np.fabs(rgen.normal(loc=0.1, scale=0.1, size=_size)),4) # + 1 for biase
         largestWight = -1*inf
         firstTime = True
         epoc = 0
         while self.epsilon < largestWight or firstTime:
             firstTime = False
             epoc += 1
+            largestWight = -1*inf
             for index, record in enumerate(x):
                 X = np.asarray(list(map(activition_function, record)))
 

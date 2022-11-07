@@ -4,7 +4,6 @@
           "type": "python",
           "name": "adalaine",
           "arguments": ["main.py"],
-          "num_worker": "0" ,
         },
 
     ]
